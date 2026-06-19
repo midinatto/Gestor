@@ -1,5 +1,4 @@
 services:
-
   db:
     image: postgres:15
     container_name: gfd-postgres
@@ -13,11 +12,10 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U gestor -d gfd_db"]
+      test: [ "CMD-SHELL", "pg_isready -U gestor -d gfd_db" ]
       interval: 5s
       timeout: 3s
       retries: 10
-
   pgadmin:
     image: dpage/pgadmin4
     container_name: gfd-pgadmin
@@ -29,7 +27,6 @@ services:
       - "8080:80"
     depends_on:
       - db
-
   backend:
     build:
       context: ./back
@@ -46,7 +43,6 @@ services:
     depends_on:
       db:
         condition: service_healthy
-
   frontend:
     build:
       context: ./front
@@ -57,6 +53,5 @@ services:
       - "8082:80"
     depends_on:
       - backend
-
 volumes:
   postgres_data:
