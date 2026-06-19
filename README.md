@@ -135,3 +135,9 @@ Em caso de erro, dúvida ou bug, falar com:
 **Mirella Fernandes Dinatto**
 GitHub: <https://github.com/midinatto>
 Repositório: <https://github.com/midinatto/Gestor>
+
+---
+
+## Observação
+
+O usuário **aerotri** aparece na lista de *Contributors* do repositório porque parte dos commits foram feitos a partir do computador da empresa em que trabalho, que estava logado em outra conta do Git. Quando percebi, alguns commits já tinham sido enviados com o autor errado, e reescrever esse histórico depois seria arriscado — então foi mantido como está. Toda a autoria do projeto é minha (midinatto / Mirella Fernandes Dinatto).
