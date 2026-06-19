@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - Nexus</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../styles/global.css">
+    <link rel="stylesheet" href="../styles/auth.css">
+</head>
+
+<body class="min-h-screen flex font-sans text-gray-800 bg-gray-50 lg:bg-white">
+    <div class="hidden lg:flex lg:w-1/2 bg-gradient-to-br from-yellow-400 via-amber-500 to-yellow-600 relative items-center justify-center overflow-hidden">
+        <div class="auth-hero-blob-top"></div>
+        <div class="auth-hero-blob-bottom"></div>
+
+        <div class="relative z-10 text-center px-12">
+            <h1 class="text-6xl font-extrabold text-white tracking-tight mb-4 drop-shadow-lg">NEXUS</h1>
+            <p class="text-xl text-yellow-50 font-medium flex items-center justify-center gap-2">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                </svg>
+                Sua Jornada Financeira Começa Aqui.
+            </p>
+        </div>
+    </div>
+
+    <div class="w-full lg:w-1/2 flex items-center justify-center p-8 sm:p-12 xl:p-24 overflow-y-auto h-screen">
+        <div class="w-full max-w-md space-y-6 bg-white p-8 lg:p-0 rounded-3xl shadow-xl lg:shadow-none border border-gray-100 lg:border-none my-auto">
+
+            <div class="text-center lg:text-left pt-8 lg:pt-0">
+                <h2 class="text-3xl font-bold text-gray-900">Crie Sua Conta</h2>
+                <p class="mt-2 text-sm text-gray-500">Preencha os dados abaixo para acessar a plataforma.</p>
+            </div>
+
+            <div id="alertMessage" class="hidden p-4 rounded-xl text-sm font-semibold text-center fade-in"></div>
+
+            <form id="cadastroForm" class="space-y-5 mt-8 pb-8 lg:pb-0">
+
+                <div>
+                    <label for="nome" class="block text-sm font-medium text-gray-700 mb-1.5">Nome Completo</label>
+                    <input type="text" id="nome" name="nome" required
+                        class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:bg-white focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none transition-all duration-200"
+                        placeholder="João da Silva">
+                </div>
+
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-700 mb-1.5">E-mail</label>
+                    <input type="email" id="email" name="email" required
+                        class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:bg-white focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none transition-all duration-200"
+                        placeholder="joao@exemplo.com">
+                </div>
+
+                <div>
+                    <label for="senha" class="block text-sm font-medium text-gray-700 mb-1.5">Senha</label>
+                    <div class="relative">
+                        <input type="password" id="senha" name="senha" required minlength="6"
+                            class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:bg-white focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none transition-all duration-200"
+                            placeholder="••••••••">
+                        <button type="button" id="togglePassword"
+                            class="absolute inset-y-0 right-0 pr-4 flex items-center text-gray-400 hover:text-amber-600 transition-colors">
+                            <svg id="eyeIcon" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <button type="submit" id="submitBtn"
+                    class="w-full bg-amber-500 hover:bg-amber-600 active:bg-amber-700 text-white font-bold py-3.5 px-4 rounded-xl shadow-lg shadow-amber-500/30 transition-all duration-200 flex justify-center items-center group mt-2">
+                    <span id="btnText">Cadastrar</span>
+                    <svg id="btnSpinner" class="hidden animate-spin ml-2 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                </button>
+
+            </form>
+
+            <p class="text-center text-sm text-gray-600 mt-6 pb-8 lg:pb-0">
+                Já tem uma conta?
+                <a href="login.html" class="text-amber-600 hover:text-amber-700 font-bold hover:underline transition-colors">Faça Login</a>
+            </p>
+
+        </div>
+    </div>
+
+    <script src="../scripts/api.js"></script>
+    <script src="../scripts/auth.js"></script>
+    <script src="../scripts/ui.js"></script>
+    <script src="../scripts/cadastro.js"></script>
+</body>
+
+</html>

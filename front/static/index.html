@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Nexus</title>
+    <script>
+        const temUsuario = !!localStorage.getItem('nexus:usuario');
+        window.location.replace(temUsuario ? 'home.html' : 'login.html');
+    </script>
+</head>
+<body></body>
+</html>
