@@ -1,0 +1,30 @@
+/* ==========================================
+   NEXUS - Estilos específicos de autenticação
+   (login.html e cadastro.html)
+   ========================================== */
+
+.auth-hero-blob-top {
+    position: absolute;
+    top: -10%;
+    left: -10%;
+    width: 24rem;
+    height: 24rem;
+    background: #fcd34d;
+    border-radius: 9999px;
+    mix-blend-mode: overlay;
+    filter: blur(3rem);
+    opacity: 0.6;
+}
+
+.auth-hero-blob-bottom {
+    position: absolute;
+    bottom: -10%;
+    right: -10%;
+    width: 24rem;
+    height: 24rem;
+    background: #b45309;
+    border-radius: 9999px;
+    mix-blend-mode: overlay;
+    filter: blur(3rem);
+    opacity: 0.4;
+}

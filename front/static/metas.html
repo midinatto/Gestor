@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minhas Metas - Nexus</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../styles/global.css">
+</head>
+<body class="bg-gray-50 font-sans text-gray-800 flex h-screen overflow-hidden">
+
+    <aside class="w-64 bg-gradient-to-b from-yellow-400 via-amber-500 to-yellow-600 hidden md:flex flex-col shadow-xl relative overflow-hidden z-20">
+        <div class="absolute top-[-5%] left-[-20%] w-64 h-64 bg-yellow-300 rounded-full mix-blend-overlay filter blur-3xl opacity-50"></div>
+
+        <div class="p-8 relative z-10">
+            <h1 class="text-4xl font-extrabold text-white tracking-tight drop-shadow-md">NEXUS</h1>
+        </div>
+
+        <nav class="flex-1 px-4 space-y-2 relative z-10 mt-4">
+            <a href="home.html" data-nav-link="home.html" class="flex items-center gap-3 px-4 py-3 rounded-xl font-medium transition-colors">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+                Dashboard
+            </a>
+            <a href="gastos.html" data-nav-link="gastos.html" class="flex items-center gap-3 px-4 py-3 rounded-xl font-medium transition-colors">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
+                Nova Transação
+            </a>
+            <a href="metas.html" data-nav-link="metas.html" class="flex items-center gap-3 px-4 py-3 rounded-xl font-medium transition-colors">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path></svg>
+                Metas
+            </a>
+            <a href="perfil.html" data-nav-link="perfil.html" class="flex items-center gap-3 px-4 py-3 rounded-xl font-medium transition-colors">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+                Meu Perfil
+            </a>
+        </nav>
+
+        <div class="p-4 relative z-10">
+            <button data-logout type="button" class="w-full flex items-center justify-center gap-2 px-4 py-3 text-amber-900 bg-white/90 hover:bg-white rounded-xl font-bold transition-colors">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path></svg>
+                Sair
+            </button>
+        </div>
+    </aside>
+
+    <main class="flex-1 flex flex-col overflow-y-auto">
+
+        <header class="md:hidden bg-amber-500 text-white p-4 flex justify-between items-center shadow-md">
+            <h1 class="text-2xl font-bold">NEXUS</h1>
+        </header>
+
+        <div class="p-8 lg:p-12 max-w-6xl mx-auto w-full fade-in">
+
+            <div class="mb-8 flex items-center justify-between flex-wrap gap-4">
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-900">Minhas Metas</h2>
+                    <p class="text-gray-500 mt-1">Acompanhe o progresso das suas metas individuais e compartilhadas.</p>
+                </div>
+                <a href="meta-compartilhada.html" class="flex items-center gap-2 bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 px-5 rounded-xl shadow-lg shadow-amber-500/30 transition-all duration-200">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
+                    Nova Meta
+                </a>
+            </div>
+
+            <div id="alertMessage" class="hidden mb-6 p-4 rounded-xl text-sm font-semibold text-center fade-in"></div>
+
+            <div id="listaMetas" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="col-span-full p-10 text-center text-sm text-gray-400 bg-white rounded-3xl border border-gray-100">
+                    Carregando suas metas...
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Modal de Aporte -->
+    <div id="modalAporte" class="hidden fixed inset-0 bg-black/40 z-50 flex items-center justify-center p-4 fade-in">
+        <div class="bg-white rounded-3xl p-8 w-full max-w-md shadow-2xl">
+            <div class="flex items-center justify-between mb-6">
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-900">Registrar Aporte</h3>
+                    <p id="aporteMetaNome" class="text-sm text-gray-500 mt-1">-</p>
+                </div>
+                <button type="button" id="fecharModalAporte" class="text-gray-400 hover:text-gray-600">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+
+            <form id="aporteForm" class="space-y-5">
+                <input type="hidden" id="aporteMetaId">
+                <div>
+                    <label for="aporteValor" class="block text-sm font-bold text-gray-700 mb-1.5">Quanto você quer guardar agora?</label>
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                            <span class="text-gray-500 font-bold sm:text-lg">R$</span>
+                        </div>
+                        <input type="text" id="aporteValor" required placeholder="0,00"
+                            class="w-full pl-12 pr-4 py-4 bg-gray-50 border border-gray-200 rounded-xl focus:bg-white focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none transition-all duration-200 text-2xl font-bold text-gray-800">
+                    </div>
+                </div>
+
+                <button type="submit" id="aporteBtn"
+                    class="w-full bg-amber-500 hover:bg-amber-600 text-white font-bold py-3.5 px-4 rounded-xl shadow-lg shadow-amber-500/30 transition-all duration-200">
+                    Confirmar Aporte
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script src="../scripts/api.js"></script>
+    <script src="../scripts/auth.js"></script>
+    <script src="../scripts/ui.js"></script>
+    <script src="../scripts/sidebar.js"></script>
+    <script src="../scripts/metas.js"></script>
+</body>
+</html>
