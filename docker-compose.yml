@@ -11,11 +11,15 @@ services:
       - "5433:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
+<<<<<<< HEAD
     healthcheck:
       test: [ "CMD-SHELL", "pg_isready -U gestor -d gfd_db" ]
       interval: 5s
       timeout: 3s
       retries: 10
+=======
+
+>>>>>>> a867d3c7d0b158a74b62dee769fbd64031956d3c
   pgadmin:
     image: dpage/pgadmin4
     container_name: gfd-pgadmin
@@ -27,6 +31,7 @@ services:
       - "8080:80"
     depends_on:
       - db
+<<<<<<< HEAD
   backend:
     build:
       context: ./back
@@ -55,3 +60,8 @@ services:
       - backend
 volumes:
   postgres_data:
+=======
+
+volumes:
+  postgres_data:
+>>>>>>> a867d3c7d0b158a74b62dee769fbd64031956d3c
